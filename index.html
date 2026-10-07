@@ -8,10 +8,6 @@
   <meta name="description" content="Aprenda estratégias para TikTok, diretrizes para Lives, padrões virais e modelagem de vídeos.">
 
   <style>
-    /* =====================================================
-       BASE
-    ===================================================== */
-
     * {
       margin: 0;
       padding: 0;
@@ -35,7 +31,6 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-
     /* =====================================================
        TELA DE AVISO
     ===================================================== */
@@ -57,29 +52,38 @@
       text-align: center;
     }
 
-
-    /* GUIA DOS TRÊS PONTOS */
+    /* =====================================================
+       INDICAÇÃO DO MENU DO TIKTOK
+    ===================================================== */
 
     .tiktok-guide {
-      position: relative;
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 105px;
-      margin-bottom: 8px;
+      height: 155px;
+      pointer-events: none;
     }
+
+    /*
+      Representação dos três pontinhos.
+      Fica no canto superior direito, simulando
+      a posição do menu do TikTok.
+    */
 
     .fake-dots {
       position: absolute;
-      top: 3px;
-      right: 12px;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: #111;
-      border: 1px solid #292929;
+      top: 18px;
+      right: 20px;
+
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 4px;
+
+      width: 28px;
+      height: 40px;
     }
 
     .fake-dots span {
@@ -87,25 +91,49 @@
       height: 5px;
       background: #fff;
       border-radius: 50%;
+      display: block;
     }
 
+    /*
+      Pequeno texto indicando que essa é a
+      posição dos três pontinhos reais.
+    */
 
-    /* SETA */
+    .menu-label {
+      position: absolute;
+      top: 20px;
+      right: 62px;
+
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+
+      opacity: .9;
+    }
+
+    /*
+      Seta aponta DIRETAMENTE para os três pontinhos.
+    */
 
     .arrow {
       position: absolute;
-      top: 43px;
-      right: 72px;
+
+      top: 48px;
+      right: 43px;
+
       width: 125px;
-      height: 60px;
+      height: 80px;
+
       overflow: visible;
+
       animation: arrowMove 1.2s ease-in-out infinite;
     }
 
     .arrow-path {
       fill: none;
       stroke: #00f2ea;
-      stroke-width: 5;
+      stroke-width: 4.5;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
@@ -125,35 +153,15 @@
       }
     }
 
+    /*
+      Texto principal fica abaixo da área dos pontinhos.
+    */
 
-    /* PONTO DE DESTAQUE */
-
-    .notice-point {
-      position: absolute;
-      top: 55px;
-      right: 61px;
-      width: 9px;
-      height: 9px;
-      background: #ff0050;
-      border-radius: 50%;
-      animation: pulse 1.3s ease-in-out infinite;
+    .notice-content {
+      position: relative;
+      z-index: 2;
+      padding-top: 125px;
     }
-
-    @keyframes pulse {
-      0%,
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      50% {
-        transform: scale(1.25);
-        opacity: .7;
-      }
-    }
-
-
-    /* TEXTO DO AVISO */
 
     .notice-box h1 {
       font-size: 29px;
@@ -173,8 +181,9 @@
       margin-bottom: 22px;
     }
 
-
-    /* PASSOS */
+    /* =====================================================
+       PASSOS
+    ===================================================== */
 
     .steps {
       text-align: left;
@@ -202,9 +211,11 @@
       border-radius: 50%;
       background: #fff;
       color: #000;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       font-size: 13px;
       font-weight: 900;
     }
@@ -234,18 +245,23 @@
       border-radius: 50%;
     }
 
-
-    /* BOTÃO */
+    /* =====================================================
+       BOTÃO
+    ===================================================== */
 
     .browser-button {
       width: 100%;
       padding: 17px 20px;
+
       border: 0;
       border-radius: 8px;
+
       background: #fff;
       color: #000;
+
       font-size: 15px;
       font-weight: 900;
+
       cursor: pointer;
 
       box-shadow:
@@ -266,9 +282,8 @@
       line-height: 1.4;
     }
 
-
     /* =====================================================
-       COMUNIDADE
+       PÁGINA DA COMUNIDADE
     ===================================================== */
 
     #communityPage {
@@ -281,7 +296,6 @@
       margin: auto;
       padding: 0 20px;
     }
-
 
     /* HEADER */
 
@@ -306,7 +320,6 @@
         -3px -3px 0 #ff0050;
     }
 
-
     /* HERO */
 
     .hero {
@@ -317,11 +330,15 @@
     .badge {
       display: inline-block;
       padding: 8px 15px;
+
       border: 1px solid rgba(255,255,255,.15);
       border-radius: 50px;
+
       background: #080808;
+
       font-size: 13px;
       color: #ddd;
+
       margin-bottom: 25px;
     }
 
@@ -332,6 +349,7 @@
     .hero h1 {
       max-width: 900px;
       margin: auto;
+
       font-size: clamp(38px, 6vw, 72px);
       line-height: .98;
       letter-spacing: -3px;
@@ -346,11 +364,12 @@
     .hero-text {
       max-width: 720px;
       margin: 28px auto 0;
+
       color: #bdbdbd;
+
       font-size: 18px;
       line-height: 1.6;
     }
-
 
     /* CTA */
 
@@ -362,12 +381,18 @@
       display: inline-flex;
       justify-content: center;
       align-items: center;
+
       min-width: 280px;
+
       padding: 18px 30px;
+
       border-radius: 8px;
+
       background: #fff;
       color: #000;
+
       text-decoration: none;
+
       font-weight: 900;
       font-size: 16px;
 
@@ -388,7 +413,6 @@
       font-size: 12px;
     }
 
-
     /* SEÇÕES */
 
     .section {
@@ -397,20 +421,26 @@
 
     .section-title {
       text-align: center;
+
       font-size: 32px;
       font-weight: 900;
+
       margin-bottom: 12px;
+
       letter-spacing: -1px;
     }
 
     .section-description {
       text-align: center;
+
       color: #999;
+
       max-width: 600px;
+
       margin: 0 auto 35px;
+
       line-height: 1.5;
     }
-
 
     /* CARDS */
 
@@ -422,9 +452,12 @@
 
     .card {
       background: #0d0d0d;
+
       border: 1px solid #222;
       border-radius: 14px;
+
       padding: 25px;
+
       transition: transform .2s ease;
     }
 
@@ -435,7 +468,9 @@
     .card-icon {
       width: 44px;
       height: 44px;
+
       border-radius: 10px;
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -447,8 +482,10 @@
       );
 
       color: #000;
+
       font-size: 20px;
       font-weight: 900;
+
       margin-bottom: 18px;
     }
 
@@ -459,17 +496,20 @@
 
     .card p {
       color: #999;
+
       font-size: 14px;
       line-height: 1.55;
     }
-
 
     /* DESTAQUE */
 
     .highlight {
       margin: 30px auto;
+
       max-width: 900px;
+
       padding: 35px;
+
       border-radius: 18px;
 
       background: #0b0b0b;
@@ -481,84 +521,113 @@
 
     .highlight h2 {
       font-size: clamp(25px, 4vw, 40px);
+
       margin-bottom: 15px;
+
       font-weight: 900;
     }
 
     .highlight p {
       color: #aaa;
+
       line-height: 1.6;
+
       max-width: 650px;
+
       margin: auto;
     }
-
 
     /* LISTA */
 
     .list {
       max-width: 700px;
+
       margin: 35px auto 0;
+
       display: grid;
+
       gap: 12px;
     }
 
     .list-item {
       display: flex;
+
       align-items: center;
+
       gap: 13px;
+
       padding: 16px;
+
       background: #0d0d0d;
+
       border: 1px solid #1c1c1c;
+
       border-radius: 10px;
+
       color: #ddd;
+
       font-size: 15px;
     }
 
     .check {
       flex-shrink: 0;
+
       width: 25px;
       height: 25px;
+
       display: flex;
+
       justify-content: center;
       align-items: center;
+
       border-radius: 50%;
+
       background: #00f2ea;
+
       color: #000;
+
       font-weight: 900;
+
       font-size: 13px;
     }
-
 
     /* CTA FINAL */
 
     .final-cta {
       text-align: center;
+
       padding: 70px 0 80px;
     }
 
     .final-cta h2 {
       font-size: clamp(30px, 5vw, 50px);
+
       font-weight: 900;
+
       letter-spacing: -2px;
+
       margin-bottom: 15px;
     }
 
     .final-cta p {
       color: #999;
+
       margin-bottom: 30px;
     }
-
 
     /* FOOTER */
 
     footer {
       border-top: 1px solid #181818;
+
       padding: 25px 0;
+
       text-align: center;
+
       color: #555;
+
       font-size: 12px;
     }
-
 
     /* =====================================================
        MOBILE
@@ -608,20 +677,28 @@
         padding: 55px 0 65px;
       }
 
-      .tiktok-guide {
-        height: 100px;
-      }
+      /*
+        No celular, os três pontinhos ficam
+        praticamente encostados no canto superior.
+      */
 
       .fake-dots {
-        right: 8px;
+        top: 14px;
+        right: 13px;
+      }
+
+      .menu-label {
+        top: 16px;
+        right: 55px;
       }
 
       .arrow {
-        right: 65px;
+        top: 43px;
+        right: 38px;
       }
 
-      .notice-point {
-        right: 54px;
+      .notice-content {
+        padding-top: 125px;
       }
 
       .notice-box h1 {
@@ -635,132 +712,155 @@
   </style>
 </head>
 
-
 <body>
 
+
   <!-- =====================================================
-       AVISO INICIAL
+       AVISO PARA ABRIR NO NAVEGADOR
   ===================================================== -->
 
   <div id="browserNotice">
 
+    <!-- INDICAÇÃO VISUAL DO CANTO SUPERIOR DIREITO -->
+
+    <div class="tiktok-guide">
+
+      <!-- Apenas representação visual -->
+      <div class="fake-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="menu-label">
+        TRÊS PONTINHOS
+      </div>
+
+      <!-- Seta apontando para os três pontinhos -->
+
+      <svg
+        class="arrow"
+        viewBox="0 0 125 80"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+
+        <path
+          class="arrow-path"
+          d="M5 68
+             C30 68,
+             58 67,
+             82 48
+             C97 36,
+             105 24,
+             110 11"
+        />
+
+        <path
+          class="arrow-head"
+          d="M101 12
+             L112 6
+             L109 19
+             Z"
+        />
+
+      </svg>
+
+    </div>
+
+
+    <!-- CONTEÚDO DO AVISO -->
+
     <div class="notice-box">
 
-      <div class="tiktok-guide">
+      <div class="notice-content">
 
-        <!-- REPRESENTAÇÃO DOS TRÊS PONTOS -->
+        <h1>
+          Antes de continuar,<br>
+          <span>abra no navegador</span>
+        </h1>
 
-        <div class="fake-dots">
-          <span></span>
-          <span></span>
-          <span></span>
+
+        <p class="notice-description">
+          Você está acessando esta página pelo TikTok.
+          Para conseguir abrir o link da comunidade corretamente,
+          siga os passos abaixo.
+        </p>
+
+
+        <div class="steps">
+
+          <div class="step">
+
+            <div class="step-number">
+              1
+            </div>
+
+            <div class="step-text">
+
+              Clique nos
+              <strong>três pontinhos</strong>
+
+              <span class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+
+              no canto superior direito.
+
+            </div>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="step-number">
+              2
+            </div>
+
+            <div class="step-text">
+
+              Procure pela opção
+              <strong>“Abrir no navegador”</strong>.
+
+            </div>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="step-number">
+              3
+            </div>
+
+            <div class="step-text">
+
+              Depois que a página abrir no navegador,
+              você poderá entrar normalmente na comunidade.
+
+            </div>
+
+          </div>
+
         </div>
 
 
-        <!-- SETA -->
-
-        <svg
-          class="arrow"
-          viewBox="0 0 125 65"
-          xmlns="http://www.w3.org/2000/svg"
+        <button
+          class="browser-button"
+          onclick="openCommunityPage()"
         >
-
-          <path
-            class="arrow-path"
-            d="M5 55 C35 55, 65 55, 92 32 C103 23, 108 15, 111 8"
-          />
-
-          <path
-            class="arrow-head"
-            d="M99 10 L112 5 L108 18 Z"
-          />
-
-        </svg>
+          JÁ ABRI NO NAVEGADOR
+        </button>
 
 
-        <!-- PONTO DE DESTAQUE -->
-
-        <div class="notice-point"></div>
+        <p class="notice-small">
+          Se você já está usando Chrome, Safari ou outro navegador,
+          pode continuar.
+        </p>
 
       </div>
-
-
-      <h1>
-        Antes de continuar,<br>
-        <span>abra no navegador</span>
-      </h1>
-
-
-      <p class="notice-description">
-        Você está acessando esta página pelo TikTok.
-        Para conseguir abrir o link da comunidade corretamente,
-        siga os passos abaixo.
-      </p>
-
-
-      <div class="steps">
-
-        <div class="step">
-
-          <div class="step-number">
-            1
-          </div>
-
-          <div class="step-text">
-            Clique nos <strong>três pontinhos</strong>
-            <span class="dots">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-            no canto superior direito.
-          </div>
-
-        </div>
-
-
-        <div class="step">
-
-          <div class="step-number">
-            2
-          </div>
-
-          <div class="step-text">
-            Procure pela opção
-            <strong>“Abrir no navegador”</strong>.
-          </div>
-
-        </div>
-
-
-        <div class="step">
-
-          <div class="step-number">
-            3
-          </div>
-
-          <div class="step-text">
-            Depois que a página abrir no navegador,
-            você poderá entrar normalmente na comunidade.
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <button
-        class="browser-button"
-        onclick="openCommunityPage()"
-      >
-        JÁ ABRI NO NAVEGADOR
-      </button>
-
-
-      <p class="notice-small">
-        Se você já está usando Chrome, Safari ou outro navegador,
-        pode continuar.
-      </p>
 
     </div>
 
@@ -769,18 +869,23 @@
 
   <!-- =====================================================
        PÁGINA DA COMUNIDADE
-       CARREGADA VISUALMENTE APÓS O AVISO
   ===================================================== -->
 
   <div id="communityPage">
+
 
     <header>
 
       <div class="container">
 
         <div class="logo">
-          <span class="logo-icon">♪</span>
+
+          <span class="logo-icon">
+            ♪
+          </span>
+
           Comunidade
+
         </div>
 
       </div>
@@ -790,6 +895,7 @@
 
     <main>
 
+
       <!-- HERO -->
 
       <section class="hero">
@@ -797,21 +903,30 @@
         <div class="container">
 
           <div class="badge">
-            Estratégias • Conteúdo • TikTok <span>●</span>
+            Estratégias • Conteúdo • TikTok
+            <span>●</span>
           </div>
 
 
           <h1>
+
             Aprenda as
-            <span class="cyan">diretrizes do TikTok</span>
+            <span class="cyan">
+              diretrizes do TikTok
+            </span>
+
             e descubra o que realmente funciona
+
           </h1>
 
 
           <p class="hero-text">
-            Entenda o que falar e o que evitar nas Lives, aprenda estratégias
-            de marketing para redes sociais, identifique padrões virais e saiba
-            como modelar vídeos que já estão funcionando.
+
+            Entenda o que falar e o que evitar nas Lives,
+            aprenda estratégias de marketing para redes sociais,
+            identifique padrões virais e saiba como modelar vídeos
+            que já estão funcionando.
+
           </p>
 
 
@@ -850,12 +965,15 @@
 
 
           <p class="section-description">
-            Conhecimento prático para entender melhor o funcionamento do
-            TikTok e transformar conteúdo em estratégia.
+
+            Conhecimento prático para entender melhor o funcionamento
+            do TikTok e transformar conteúdo em estratégia.
+
           </p>
 
 
           <div class="benefits">
+
 
             <div class="card">
 
@@ -868,8 +986,10 @@
               </h3>
 
               <p>
+
                 Entenda as principais regras da plataforma e os cuidados
                 necessários para evitar problemas com seus conteúdos e Lives.
+
               </p>
 
             </div>
@@ -886,8 +1006,10 @@
               </h3>
 
               <p>
+
                 Aprenda estratégias para posicionar seu conteúdo, aumentar
                 sua presença digital e chamar mais atenção nas redes sociais.
+
               </p>
 
             </div>
@@ -904,8 +1026,10 @@
               </h3>
 
               <p>
+
                 Aprenda a observar o que existe por trás de conteúdos que
                 viralizam e identificar padrões que podem ser adaptados.
+
               </p>
 
             </div>
@@ -922,8 +1046,10 @@
               </h3>
 
               <p>
+
                 Descubra como analisar vídeos de grandes criadores e modelar
                 estruturas que fazem sentido para o seu próprio conteúdo.
+
               </p>
 
             </div>
@@ -940,8 +1066,10 @@
               </h3>
 
               <p>
+
                 Entenda melhor o que pode ser abordado durante uma Live e
                 quais comportamentos podem aumentar o risco de restrições.
+
               </p>
 
             </div>
@@ -958,11 +1086,14 @@
               </h3>
 
               <p>
+
                 Pare de criar conteúdo no escuro. Aprenda a analisar,
                 adaptar e construir conteúdos com mais intenção.
+
               </p>
 
             </div>
+
 
           </div>
 
@@ -983,11 +1114,14 @@
               Pare de tentar descobrir tudo sozinho.
             </h2>
 
+
             <p>
+
               Tenha acesso a uma comunidade focada em estratégias,
               conteúdo, TikTok e crescimento nas redes sociais.
               Aprenda, observe o que está funcionando e adapte para
               a sua realidade.
+
             </p>
 
           </div>
@@ -1010,34 +1144,61 @@
 
           <div class="list">
 
+
             <div class="list-item">
-              <span class="check">✓</span>
+
+              <span class="check">
+                ✓
+              </span>
+
               Estratégias para TikTok e redes sociais
+
             </div>
 
 
             <div class="list-item">
-              <span class="check">✓</span>
+
+              <span class="check">
+                ✓
+              </span>
+
               Diretrizes e boas práticas para Lives
+
             </div>
 
 
             <div class="list-item">
-              <span class="check">✓</span>
+
+              <span class="check">
+                ✓
+              </span>
+
               Análise de padrões de vídeos virais
+
             </div>
 
 
             <div class="list-item">
-              <span class="check">✓</span>
+
+              <span class="check">
+                ✓
+              </span>
+
               Modelagem de conteúdos de grandes criadores
+
             </div>
 
 
             <div class="list-item">
-              <span class="check">✓</span>
+
+              <span class="check">
+                ✓
+              </span>
+
               Estratégias de criação e posicionamento
+
             </div>
+
 
           </div>
 
@@ -1075,12 +1236,14 @@
 
       </section>
 
+
     </main>
 
 
     <footer>
       © 2026 — Comunidade de Estratégias e Conteúdo
     </footer>
+
 
   </div>
 
@@ -1093,13 +1256,18 @@
 
     function openCommunityPage() {
 
-      const notice = document.getElementById("browserNotice");
-      const page = document.getElementById("communityPage");
+      const notice =
+        document.getElementById("browserNotice");
+
+      const page =
+        document.getElementById("communityPage");
 
       notice.style.display = "none";
+
       page.style.display = "block";
 
       window.scrollTo(0, 0);
+
     }
 
   </script>
