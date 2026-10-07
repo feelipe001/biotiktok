@@ -66,37 +66,8 @@
     }
 
     /*
-      Representação dos três pontinhos.
-      Fica no canto superior direito, simulando
-      a posição do menu do TikTok.
-    */
-
-    .fake-dots {
-      position: absolute;
-      top: 18px;
-      right: 20px;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
-
-      width: 28px;
-      height: 40px;
-    }
-
-    .fake-dots span {
-      width: 5px;
-      height: 5px;
-      background: #fff;
-      border-radius: 50%;
-      display: block;
-    }
-
-    /*
-      Pequeno texto indicando que essa é a
-      posição dos três pontinhos reais.
+      Apenas a indicação escrita.
+      Os três pontinhos desenhados foram removidos.
     */
 
     .menu-label {
@@ -113,7 +84,8 @@
     }
 
     /*
-      Seta aponta DIRETAMENTE para os três pontinhos.
+      Seta apontando para o canto superior direito,
+      onde ficam os três pontinhos reais do TikTok.
     */
 
     .arrow {
@@ -154,7 +126,7 @@
     }
 
     /*
-      Texto principal fica abaixo da área dos pontinhos.
+      Conteúdo principal do aviso.
     */
 
     .notice-content {
@@ -229,20 +201,6 @@
 
     .step-text strong {
       color: #fff;
-    }
-
-    .dots {
-      display: inline-flex;
-      gap: 3px;
-      vertical-align: middle;
-      margin: 0 3px;
-    }
-
-    .dots span {
-      width: 4px;
-      height: 4px;
-      background: #fff;
-      border-radius: 50%;
     }
 
     /* =====================================================
@@ -677,16 +635,6 @@
         padding: 55px 0 65px;
       }
 
-      /*
-        No celular, os três pontinhos ficam
-        praticamente encostados no canto superior.
-      */
-
-      .fake-dots {
-        top: 14px;
-        right: 13px;
-      }
-
       .menu-label {
         top: 16px;
         right: 55px;
@@ -714,7 +662,6 @@
 
 <body>
 
-
   <!-- =====================================================
        AVISO PARA ABRIR NO NAVEGADOR
   ===================================================== -->
@@ -725,18 +672,18 @@
 
     <div class="tiktok-guide">
 
-      <!-- Apenas representação visual -->
-      <div class="fake-dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <!--
+        Os três pontinhos desenhados foram removidos.
+        A seta aponta diretamente para o local onde
+        ficam os três pontinhos reais do TikTok.
+      -->
 
       <div class="menu-label">
         TRÊS PONTINHOS
       </div>
 
-      <!-- Seta apontando para os três pontinhos -->
+
+      <!-- SETA -->
 
       <svg
         class="arrow"
@@ -799,13 +746,6 @@
 
               Clique nos
               <strong>três pontinhos</strong>
-
-              <span class="dots">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-
               no canto superior direito.
 
             </div>
@@ -873,7 +813,6 @@
 
   <div id="communityPage">
 
-
     <header>
 
       <div class="container">
@@ -894,7 +833,6 @@
 
 
     <main>
-
 
       <!-- HERO -->
 
@@ -1243,7 +1181,6 @@
     <footer>
       © 2026 — Comunidade de Estratégias e Conteúdo
     </footer>
-
 
   </div>
 
