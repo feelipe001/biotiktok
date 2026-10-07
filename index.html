@@ -22,7 +22,228 @@
       overflow-x: hidden;
     }
 
-    /* Efeitos de fundo */
+    /* =====================================================
+       TELA DE AVISO — ABRIR NO NAVEGADOR
+    ===================================================== */
+
+    #browserNotice {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px 18px;
+    }
+
+    .notice-box {
+      width: 100%;
+      max-width: 430px;
+      text-align: center;
+    }
+
+    /* ÁREA DOS TRÊS PONTOS + SETA */
+
+    .tiktok-guide {
+      position: relative;
+      width: 100%;
+      height: 125px;
+      margin-bottom: 10px;
+    }
+
+    .fake-dots {
+      position: absolute;
+      top: 5px;
+      right: 18px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #151515;
+      border: 1px solid #292929;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.04);
+    }
+
+    .fake-dots span {
+      width: 5px;
+      height: 5px;
+      background: #fff;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50px;
+      right: 82px;
+      width: 125px;
+      height: 65px;
+      overflow: visible;
+      animation: arrowMove 1.2s ease-in-out infinite;
+    }
+
+    .arrow-path {
+      fill: none;
+      stroke: #00f2ea;
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      filter: drop-shadow(0 0 5px rgba(0,242,234,0.4));
+    }
+
+    .arrow-head {
+      fill: #00f2ea;
+      filter: drop-shadow(0 0 5px rgba(0,242,234,0.4));
+    }
+
+    @keyframes arrowMove {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+
+      50% {
+        transform: translate(5px, -5px);
+      }
+    }
+
+    .notice-point {
+      position: absolute;
+      top: 60px;
+      right: 73px;
+      width: 10px;
+      height: 10px;
+      background: #ff0050;
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 5px rgba(255,0,80,0.12),
+        0 0 18px rgba(255,0,80,0.5);
+      animation: pulse 1.3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.35);
+        opacity: 0.7;
+      }
+    }
+
+    .notice-box h1 {
+      font-size: 29px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 15px;
+    }
+
+    .notice-box h1 span {
+      color: #00f2ea;
+    }
+
+    .notice-description {
+      color: #aaa;
+      font-size: 15px;
+      line-height: 1.55;
+      margin-bottom: 25px;
+    }
+
+    .steps {
+      text-align: left;
+      background: #0d0d0d;
+      border: 1px solid #222;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    .step {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+    }
+
+    .step + .step {
+      margin-top: 18px;
+    }
+
+    .step-number {
+      flex-shrink: 0;
+      width: 29px;
+      height: 29px;
+      border-radius: 50%;
+      background: #fff;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .step-text {
+      color: #ddd;
+      font-size: 14px;
+      line-height: 1.45;
+      padding-top: 4px;
+    }
+
+    .step-text strong {
+      color: #fff;
+    }
+
+    .dots {
+      display: inline-flex;
+      gap: 4px;
+      vertical-align: middle;
+      margin: 0 3px;
+    }
+
+    .dots span {
+      width: 5px;
+      height: 5px;
+      background: #fff;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .browser-button {
+      width: 100%;
+      padding: 17px 20px;
+      border: 0;
+      border-radius: 8px;
+      background: #fff;
+      color: #000;
+      font-size: 15px;
+      font-weight: 900;
+      cursor: pointer;
+      box-shadow:
+        4px 4px 0 #00f2ea,
+        -4px -4px 0 #ff0050;
+      transition: 0.2s ease;
+    }
+
+    .browser-button:hover {
+      transform: translateY(-2px);
+    }
+
+    .notice-small {
+      margin-top: 18px;
+      color: #555;
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    /* =====================================================
+       PÁGINA DA COMUNIDADE
+    ===================================================== */
+
     body::before {
       content: "";
       position: fixed;
@@ -57,6 +278,7 @@
     }
 
     /* HEADER */
+
     header {
       padding: 28px 0;
       text-align: center;
@@ -80,6 +302,7 @@
     }
 
     /* HERO */
+
     .hero {
       text-align: center;
       padding: 55px 0 45px;
@@ -123,6 +346,7 @@
     }
 
     /* CTA */
+
     .cta-area {
       margin-top: 35px;
     }
@@ -159,6 +383,7 @@
     }
 
     /* BENEFÍCIOS */
+
     .section {
       padding: 55px 0;
     }
@@ -224,6 +449,7 @@
     }
 
     /* BLOCO CENTRAL */
+
     .highlight {
       margin: 30px auto;
       max-width: 900px;
@@ -250,6 +476,7 @@
     }
 
     /* LISTA */
+
     .list {
       max-width: 700px;
       margin: 35px auto 0;
@@ -284,6 +511,7 @@
     }
 
     /* CTA FINAL */
+
     .final-cta {
       text-align: center;
       padding: 70px 0 80px;
@@ -302,6 +530,7 @@
     }
 
     /* FOOTER */
+
     footer {
       border-top: 1px solid #181818;
       padding: 25px 0;
@@ -311,6 +540,7 @@
     }
 
     /* MOBILE */
+
     @media (max-width: 700px) {
 
       .container {
@@ -354,25 +584,173 @@
       .final-cta {
         padding: 55px 0 65px;
       }
+
+      .tiktok-guide {
+        height: 115px;
+      }
+
+      .fake-dots {
+        right: 10px;
+      }
+
+      .arrow {
+        right: 65px;
+      }
+
+      .notice-point {
+        right: 57px;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- =====================================================
+       TELA INICIAL
+  ===================================================== -->
+
+  <div id="browserNotice">
+
+    <div class="notice-box">
+
+      <!-- TRÊS PONTINHOS + SETA -->
+
+      <div class="tiktok-guide">
+
+        <div class="fake-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <svg
+          class="arrow"
+          viewBox="0 0 125 65"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="arrow-path"
+            d="M5 55 C35 55, 65 55, 92 32 C103 23, 108 15, 111 8"
+          />
+
+          <path
+            class="arrow-head"
+            d="M99 10 L112 5 L108 18 Z"
+          />
+        </svg>
+
+        <div class="notice-point"></div>
+
+      </div>
+
+
+      <h1>
+        Antes de continuar,<br>
+        <span>abra no navegador</span>
+      </h1>
+
+
+      <p class="notice-description">
+        Você está acessando esta página pelo TikTok.
+        Para conseguir abrir o link da comunidade corretamente,
+        siga os passos abaixo.
+      </p>
+
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div class="step-number">
+            1
+          </div>
+
+          <div class="step-text">
+            Clique nos <strong>três pontinhos</strong>
+            <span class="dots">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            no canto superior direito.
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            2
+          </div>
+
+          <div class="step-text">
+            Procure pela opção
+            <strong>“Abrir no navegador”</strong>.
+          </div>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            3
+          </div>
+
+          <div class="step-text">
+            Depois que a página abrir no navegador,
+            você poderá entrar normalmente na comunidade.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="browser-button"
+        onclick="openCommunityPage()"
+      >
+        JÁ ABRI NO NAVEGADOR
+      </button>
+
+
+      <p class="notice-small">
+        Se você já está usando Chrome, Safari ou outro navegador,
+        pode continuar.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       PÁGINA DA COMUNIDADE
+  ===================================================== -->
+
   <header>
+
     <div class="container">
+
       <div class="logo">
         <span class="logo-icon">♪</span>
         Comunidade
       </div>
+
     </div>
+
   </header>
+
 
   <main>
 
     <!-- HERO -->
+
     <section class="hero">
+
       <div class="container">
 
         <div class="badge">
@@ -391,6 +769,7 @@
         </p>
 
         <div class="cta-area">
+
           <a
             href="https://chat.whatsapp.com/JLU10Xch10u5yhKkaEpB6X"
             target="_blank"
@@ -403,14 +782,18 @@
           <p class="cta-subtitle">
             Acesso direto à comunidade
           </p>
+
         </div>
 
       </div>
+
     </section>
 
 
     <!-- BENEFÍCIOS -->
+
     <section class="section">
+
       <div class="container">
 
         <h2 class="section-title">
@@ -422,70 +805,127 @@
           TikTok e transformar conteúdo em estratégia.
         </p>
 
+
         <div class="benefits">
 
           <div class="card">
-            <div class="card-icon">01</div>
-            <h3>Diretrizes do TikTok</h3>
+
+            <div class="card-icon">
+              01
+            </div>
+
+            <h3>
+              Diretrizes do TikTok
+            </h3>
+
             <p>
               Entenda as principais regras da plataforma e os cuidados
               necessários para evitar problemas com seus conteúdos e Lives.
             </p>
+
           </div>
 
+
           <div class="card">
-            <div class="card-icon">02</div>
-            <h3>Estratégias de Marketing</h3>
+
+            <div class="card-icon">
+              02
+            </div>
+
+            <h3>
+              Estratégias de Marketing
+            </h3>
+
             <p>
               Aprenda estratégias para posicionar seu conteúdo, aumentar
               sua presença digital e chamar mais atenção nas redes sociais.
             </p>
+
           </div>
 
+
           <div class="card">
-            <div class="card-icon">03</div>
-            <h3>Padrões Virais</h3>
+
+            <div class="card-icon">
+              03
+            </div>
+
+            <h3>
+              Padrões Virais
+            </h3>
+
             <p>
               Aprenda a observar o que existe por trás de conteúdos que
               viralizam e identificar padrões que podem ser adaptados.
             </p>
+
           </div>
 
+
           <div class="card">
-            <div class="card-icon">04</div>
-            <h3>Modelagem de Vídeos</h3>
+
+            <div class="card-icon">
+              04
+            </div>
+
+            <h3>
+              Modelagem de Vídeos
+            </h3>
+
             <p>
               Descubra como analisar vídeos de grandes criadores e modelar
               estruturas que fazem sentido para o seu próprio conteúdo.
             </p>
+
           </div>
 
+
           <div class="card">
-            <div class="card-icon">05</div>
-            <h3>Conteúdo para Lives</h3>
+
+            <div class="card-icon">
+              05
+            </div>
+
+            <h3>
+              Conteúdo para Lives
+            </h3>
+
             <p>
               Entenda melhor o que pode ser abordado durante uma Live e
               quais comportamentos podem aumentar o risco de restrições.
             </p>
+
           </div>
 
+
           <div class="card">
-            <div class="card-icon">06</div>
-            <h3>Estratégia de Conteúdo</h3>
+
+            <div class="card-icon">
+              06
+            </div>
+
+            <h3>
+              Estratégia de Conteúdo
+            </h3>
+
             <p>
               Pare de criar conteúdo no escuro. Aprenda a analisar,
               adaptar e construir conteúdos com mais intenção.
             </p>
+
           </div>
 
         </div>
 
       </div>
+
     </section>
 
 
     <!-- DESTAQUE -->
+
     <section class="section">
+
       <div class="container">
 
         <div class="highlight">
@@ -504,52 +944,88 @@
         </div>
 
       </div>
+
     </section>
 
 
     <!-- LISTA -->
+
     <section class="section">
+
       <div class="container">
 
         <h2 class="section-title">
           Dentro da comunidade
         </h2>
 
+
         <div class="list">
 
           <div class="list-item">
-            <span class="check">✓</span>
+
+            <span class="check">
+              ✓
+            </span>
+
             Estratégias para TikTok e redes sociais
+
           </div>
 
+
           <div class="list-item">
-            <span class="check">✓</span>
+
+            <span class="check">
+              ✓
+            </span>
+
             Diretrizes e boas práticas para Lives
+
           </div>
 
+
           <div class="list-item">
-            <span class="check">✓</span>
+
+            <span class="check">
+              ✓
+            </span>
+
             Análise de padrões de vídeos virais
+
           </div>
 
+
           <div class="list-item">
-            <span class="check">✓</span>
+
+            <span class="check">
+              ✓
+            </span>
+
             Modelagem de conteúdos de grandes criadores
+
           </div>
 
+
           <div class="list-item">
-            <span class="check">✓</span>
+
+            <span class="check">
+              ✓
+            </span>
+
             Estratégias de criação e posicionamento
+
           </div>
 
         </div>
 
       </div>
+
     </section>
 
 
     <!-- CTA FINAL -->
+
     <section class="final-cta">
+
       <div class="container">
 
         <h2>
@@ -570,14 +1046,37 @@
         </a>
 
       </div>
+
     </section>
 
   </main>
 
 
+  <!-- FOOTER -->
+
   <footer>
     © 2026 — Comunidade de Estratégias e Conteúdo
   </footer>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
+
+  <script>
+
+    function openCommunityPage() {
+
+      document.getElementById("browserNotice").style.display = "none";
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+
+    }
+
+  </script>
 
 </body>
 </html>
